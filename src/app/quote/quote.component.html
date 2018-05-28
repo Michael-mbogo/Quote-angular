@@ -1,0 +1,7 @@
+<h1>My Quotes</h1>
+<hr>
+
+<ul>
+  <li *ngFor='let quotes of quotes'>{{quotes.name}}</li>
+</ul>
+<p *ngIf='quotes.length>5'>Punguza Thoughts</p>
