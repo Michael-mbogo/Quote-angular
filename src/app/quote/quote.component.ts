@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Quote } from '../quote'
+import { Quote } from '../quote';
 
 @Component({
   selector: 'app-quote',
@@ -29,13 +29,6 @@ export class QuoteComponent implements OnInit {
 
     }
   }
-
-  $(document).ready(function(){
-    $("#up").click(function(){
-    var up = $.post("/upvote", {changeBy: 1}, function(dataBack){
-
-        $("#upvote").text(dataBack);
-    });
 
 
 
