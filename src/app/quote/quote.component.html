@@ -3,10 +3,10 @@
 
 
   <ul>
-    <div *ngFor='let quote of qutootes; let i=index'>
+    <div *ngFor='let quote of quotes; let i=index'>
       <li >{{quote.name}}</li>
-      <button (click)='toggle(i)'>Toggle button</button>
-      <app-quote-details [quote]='quote'></app-quote-details>
+      <button (click)='toggleDetails(i)'>Toggle button</button>
+      <app-quote-details *ngIf="quote.showDescription" [quote]='quote'></app-quote-details>
     </div>
   </ul>
 <p *ngIf='quotes.length>5'>Punguza Thoughts</p>
