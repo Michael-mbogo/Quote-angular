@@ -1,7 +1,11 @@
 <h1>My Quotes</h1>
 <hr>
 
-<ul>
-  <li *ngFor='let quotes of quotes'>{{quotes.name}}</li>
-</ul>
+
+  <ul>
+    <div *ngFor='let quotes of quotes'>
+      <li >{{quotes.name}}</li>
+      <app-quote-details [quote]='quote'></app-quote-details>
+    </div>
+  </ul>
 <p *ngIf='quotes.length>5'>Punguza Thoughts</p>
