@@ -2,16 +2,19 @@
 <hr>
 
 <div class="container">
-<div class="row">
+  <div class="row" *ngFor='let quote of quotes; let i=index'>
+    <div class="col-md-12">
+      <li>{{quote.name}} </li>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-success"(click)='toggleDetails(i)'>Toggle button</button>
+        <button id="up" class="btn btn-danger">Upvote </button>
+        <button id="down" class="btn btn-info">Downvote </button>
+    </div>
 
-    <div *ngFor='let quote of quotes; let i=index'>
-      <li >{{quote.name}} </li>
-      <button (click)='toggleDetails(i)'>Toggle button</button>
       <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'deleteQuote($event, i)'></app-quote-details>
-    </div>
-    </div>
+
   </div>
-
-
+</div>
 
 <p *ngIf='quotes.length>5'>Punguza Thoughts</p>
