@@ -1,8 +1,9 @@
 <h1>My Quotes</h1>
 <hr>
 <div class="container">
-  <app-quote-form></app-quote-form>
-
+  <div class="row">
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+  </div>
 </div>
 
 

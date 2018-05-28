@@ -14,6 +14,16 @@ export class QuoteComponent implements OnInit {
     new Quote(1, 'I changed my password everywhere to incorrect. That way when I forget it, it always reminds me','By MattKinson',new Date(2018,6,7)),
   ]
 
+
+    addNewQuote(quote){
+      let quoteLength = this.quote.length;
+      quote.id=quoteLength+1;
+      quote.completeDate = new Date(quote.completeDate)
+      this.quotes.push(quote)
+
+  }
+  }
+
   toggleDetails(index){
     this.quotes[index].showDescription = !this.quotes[index].showDescription
   }
