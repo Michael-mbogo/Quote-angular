@@ -3,6 +3,7 @@
 <div class="container">
   <div class="row">
       <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+
   </div>
 </div>
 
@@ -12,12 +13,20 @@
   <div class="row" *ngFor='let quote of quotes; let i=index'>
 
     <div class="col-md-12">
-      <li>{{quote.name}} </li>
+      <li>{{quote.name}}</li>
     </div>
     <div class="col-md-12">
         <button class="btn btn-success"(click)='toggleDetails(i)'>Toggle button</button>
-        <button id="up" class="btn btn-danger">Upvote </button>
-        <button id="down" class="btn btn-info">Downvote </button>
+
+          <div class="count">0</div>
+            <button id="up" class="btn btn-danger" (click)= "count(-1)">Upvote </button>
+
+
+
+          <div class="count">0</div>
+            <button id="down" class="btn btn-info" (click)="count(+1)">Downvote </button>
+
+
     </div>
 
       <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'deleteQuote($event, i)'></app-quote-details>
