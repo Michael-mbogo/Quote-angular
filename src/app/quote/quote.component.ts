@@ -40,6 +40,17 @@ export class QuoteComponent implements OnInit {
     }
   }
 
+  upvote = 0;
+  downvote = 0;
+
+  add(){
+    this.upvote=this.upvote+1;
+  }
+
+  sub(){
+    this.downvote=this.downvote-1;
+  }
+
 
 
 
